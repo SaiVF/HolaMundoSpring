@@ -15,8 +15,15 @@ public class ControladorInicio {
     @GetMapping("/")
     public String inicio(Model model){
         var mensaje = "Hola mundo con Thymeleaf";
+        var persona = new Persona();
+        persona.setNombre("Santiago");
+        persona.setApellido("Vargas");
+        persona.setEmail("sai19.sv@gmail.com");
+        persona.setTelefono("0971621089");
+        
         model.addAttribute("mensaje", mensaje);
         model.addAttribute("saludo",saludo);
+        model.addAttribute("persona", persona);
         log.info("ejecutando el controlador Spring MVC");
         return "index";
     }
